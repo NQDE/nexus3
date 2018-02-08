@@ -19,6 +19,7 @@ before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
 
 script:
+  - curl -o /dev/null -v https://sonatype-download.global.ssl.fastly.net/nexus/3/nexus-3.3.1-01-unix.tar.gz
   - bundle exec rubocop --version
   - bundle exec rubocop
   - bundle exec foodcritic --version
